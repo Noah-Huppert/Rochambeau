@@ -14,7 +14,7 @@ public class UserInputPlayer extends Player {
     public String choose(){
         String choice = "";
         do{
-            choice = Rochambeau.readLine("Enter your choice(rock/paper/scissors");
+            choice = Rochambeau.readLine("Enter your choice(rock/paper/scissors)");
         } while(!Rochambeau.isValid(choice));
 
         return choice;

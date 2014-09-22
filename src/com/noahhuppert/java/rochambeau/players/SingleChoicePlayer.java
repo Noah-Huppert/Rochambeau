@@ -9,7 +9,6 @@ public class SingleChoicePlayer extends Player{
     private String choice;
 
     public SingleChoicePlayer(String sChoice){
-        name = "Test Player";
         choice = sChoice;
     }
 

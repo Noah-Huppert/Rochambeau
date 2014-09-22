@@ -1,6 +1,9 @@
 package com.noahhuppert.java.rochambeau;
 
+import com.noahhuppert.java.rochambeau.players.CheatingPlayer;
 import com.noahhuppert.java.rochambeau.players.Player;
+import com.noahhuppert.java.rochambeau.players.SingleChoicePlayer;
+import com.noahhuppert.java.rochambeau.players.UserInputPlayer;
 
 import java.io.BufferedReader;
 import java.io.Console;
@@ -92,8 +95,8 @@ public class Rochambeau {
 	// the two players; uses polymorphism to have different types of player
 	// types of Player object or change the loop to vary the number of rounds
 	public static void main(String[] args) {
-		p1 = new Player();
-		p2 = new Player();
+		p1 = new UserInputPlayer();
+        p2 = new SingleChoicePlayer("scissors");
 
 		for (int i = 1; i <= ROUNDS; i++) {  // change this 3 to play more or less rounds
             System.out.println("********** New Round **********");
