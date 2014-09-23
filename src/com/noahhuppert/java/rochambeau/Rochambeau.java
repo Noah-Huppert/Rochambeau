@@ -1,5 +1,6 @@
 package com.noahhuppert.java.rochambeau;
 
+import com.noahhuppert.java.rochambeau.log.Log;
 import com.noahhuppert.java.rochambeau.players.CheatingPlayer;
 import com.noahhuppert.java.rochambeau.players.Player;
 import com.noahhuppert.java.rochambeau.players.SingleChoicePlayer;
@@ -9,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.Console;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 // Rochambeau -- this class players the game of "rock, paper, scissors" between two players, keeping
 // score and printing out results as it goes.  It uses a simple inheritance/polymorphism scheme to
@@ -46,6 +48,16 @@ public class Rochambeau {
             }
         }
         return line;
+    }
+
+    public static String readLine(String prompt, String[] valid){
+        String result = "";
+
+        while(!Arrays.asList(valid).contains(result)){
+            result = Rochambeau.readLine(prompt);
+        }
+
+        return result;
     }
 
     // randomInt -- utility method to return a random integer between 1 and the given max value, inclusive
@@ -95,10 +107,13 @@ public class Rochambeau {
 	// the two players; uses polymorphism to have different types of player
 	// types of Player object or change the loop to vary the number of rounds
 	public static void main(String[] args) {
+        System.out.println("WARNING: THIS MAIN ENTRY POINT IS DEPRECATED. PLEASE RUN THE MAIN ENTRY POINT IN \"main\"");
+
 		p1 = new UserInputPlayer();
         p2 = new SingleChoicePlayer("scissors");
 
 		for (int i = 1; i <= ROUNDS; i++) {  // change this 3 to play more or less rounds
+            System.out.println("WARNING: THIS MAIN ENTRY POINT IS DEPRECATED. PLEASE RUN THE MAIN ENTRY POINT IN \"main\"");
             System.out.println("********** New Round **********");
 
 			String p1Choice, p2Choice;
