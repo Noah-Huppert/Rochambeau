@@ -1,5 +1,32 @@
 package com.noahhuppert.java.rochambeau;
 
+/* NOTES:
+I created 2 new players
+    RandomChoicePlayer - Picks randomly from the 3 choices
+    UserInputPlayer - Asks the user for its name, Also asks the user for its choice
+
+I modified the Player class to pick from a random set of names
+
+I added original ascii art for when the choice is "rock" or "paper" and I found some ascii art for scissors
+
+I made the choices "rock", "paper", and "scissors" constants in the Rochambeau(public static final).
+    This way I do not have to worry about spelling the choices correctly or if I change their names.
+
+I also made a modified version of readLine() that only accepts certain inputs
+    EX:
+        Rochambeau.readLine("I will only accept \"foo\" and \"bazz\", new String[] { "foo", "bazz" });
+    The second argument is an array of strings that it will accept, if the input is not one of these strings it will re-prompt the user
+
+I also added a Unit Test suite to the project. These tests make sure that findWinner() and isValid() are working. This test suite uses JUnit and JUnit's custom assertion library.
+    These two functions are the heart of the game, without them the game would not work, therefore I thought it was necessary to write tests for them.
+    This way, if I accidentally break one of these functions I will find out right away.
+    These tests are located in Rochambeau/tests/com/noahhuppert/java/rochambeau/tests
+
+    You can view the latest test results in "Rochambeau/Test Results - All_in_Rochambeau.html"
+
+I also switched the build system over to Gradle. This allowed me to have JUnit be downloaded from Maven and only be accessible in the tests directory.
+ */
+
 import com.noahhuppert.java.rochambeau.players.Player;
 import com.noahhuppert.java.rochambeau.players.RandomChoicePlayer;
 import com.noahhuppert.java.rochambeau.players.UserInputPlayer;
